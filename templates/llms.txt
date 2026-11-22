@@ -1,0 +1,20 @@
+# Company Name
+
+> One-sentence factual summary of what the company does, who it serves, where it operates, and its transparent pricing model.
+
+## Entity Facts
+
+- Legal entity: Example Company Ltd.
+- Headquarters: Street Address, Postal Code City, Country
+- Contact: hello@example.com · +48 000 000 000
+- Primary services: Core Service 1, Core Service 2, Core Service 3
+
+## Core Pages
+
+- [Homepage](https://www.example.com/): Overview of services, case studies, and contact.
+- [Pricing](https://www.example.com/pricing): Packages, deliverables, and contract terms.
+- [About Us](https://www.example.com/about): Team, methodology, and company credentials.
+
+## Documentation & Guides
+
+- [Guide Title](https://www.example.com/blog/guide-slug): Concise summary of key takeaways and data.

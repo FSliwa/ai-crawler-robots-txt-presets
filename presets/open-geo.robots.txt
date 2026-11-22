@@ -1,0 +1,8 @@
+# Open GEO robots.txt policy (2026)
+# Maintained by AI SEO COMPANY (https://www.ai-seo-company.pl/)
+# Allows all search, citation, agent and training crawlers for maximum brand visibility
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.example.com/sitemap.xml
