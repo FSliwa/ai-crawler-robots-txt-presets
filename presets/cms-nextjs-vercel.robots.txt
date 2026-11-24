@@ -1,0 +1,53 @@
+# Recommended AI & SEO robots.txt policy (2026)
+# Maintained by AI SEO COMPANY (https://www.ai-seo-company.pl/)
+# Allows AI search & citation bots (traffic + leads), blocks raw LLM training scrapers
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Block foundation model training scrapers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+# Next.js App Router / Vercel specific rules (blocks /api/ routes, keeps /_next/static/ renderable)
+User-agent: *
+Allow: /_next/static/
+Allow: /_next/image
+Disallow: /api/
+Disallow: /_next/data/
+# Vercel Preview: ustaw dodatkowo X-Robots-Tag: noindex dla *.vercel.app poza produkcja https://www.example.com
+Allow: /
+Sitemap: https://www.example.com/sitemap.xml

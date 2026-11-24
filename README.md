@@ -19,7 +19,13 @@ Test your live domain (including HTTP `200/403` WAF headers, Cloudflare Verified
 | `presets/recommended-geo.robots.txt` | **Recommended for B2B & E-commerce (GEO + SEO)** | **Allowed** (`OAI-SearchBot`, `ChatGPT-User`, `PerplexityBot`, `Claude-SearchBot`) | **Blocked** (`GPTBot`, `ClaudeBot`, `Google-Extended`, `Applebot-Extended`, `Meta-ExternalAgent`) | **Allowed** (`Googlebot`, `Bingbot`, `Applebot`) |
 | `presets/open-geo.robots.txt` | Maximum brand exposure across all search & LLM datasets | **Allowed** | **Allowed** | **Allowed** |
 | `presets/strict-block-ai.robots.txt` | Paywalled publishers blocking all generative AI | **Blocked** | **Blocked** | **Allowed** |
+| `presets/cms-wordpress-woocommerce.robots.txt` | WordPress & WooCommerce crawl-budget + GEO policy | **Allowed** | **Blocked** | **Allowed** |
+| `presets/cms-shopify.robots.txt` | Shopify (`/collections/*+*` & cart protection) + GEO policy | **Allowed** | **Blocked** | **Allowed** |
+| `presets/cms-nextjs-vercel.robots.txt` | Next.js App Router / Vercel (`/_next/static/` open, `/api/` blocked) | **Allowed** | **Blocked** | **Allowed** |
+| `presets/cms-webflow.robots.txt` | Webflow internal search protection + GEO policy | **Allowed** | **Blocked** | **Allowed** |
+| `presets/cms-prestashop.robots.txt` | PrestaShop faceted controller protection + GEO policy | **Allowed** | **Blocked** | **Allowed** |
 | `templates/llms.txt` | Structured Markdown index of canonical URLs & entity facts for LLMs | Used by AI assistants & agents | - | - |
+| `packages/llms-txt-check` | Zero-dependency Node.js CLI validator for `/llms.txt` & `/robots.txt` | Validates 15 AI & search bots | - | - |
 
 ---
 
@@ -46,8 +52,9 @@ Test your live domain (including HTTP `200/403` WAF headers, Cloudflare Verified
 ## Why `robots.txt` Alone Is Not Enough for GEO
 
 1. **WAF / CDN Bot Fight Mode (`HTTP 403`):** Even with `Allow: /` in `robots.txt`, Cloudflare Bot Fight Mode or firewall rules can block `OAI-SearchBot` or `PerplexityBot` at the HTTP edge.
-2. **Client-Side JavaScript (`CSR`):** Most AI answer-engine fetchers do not execute heavy client-side JS bundles. If your content renders inside an empty `<div id="root"></div>`, AI crawlers index an empty shell. Compare SSR vs CSR performance with our [Core Web Vitals & SSR Comparison Tool](https://www.ai-seo-company.pl/en/tools/core-web-vitals-comparison).
-3. **Entity Consistency (`JSON-LD` + `/llms.txt`):** Pair clean crawler access with `Organization` / `Person` `sameAs` links and a concise `/llms.txt` index at the root of your domain.
+2. **Client-Side JavaScript (`CSR`):** Most AI answer-engine fetchers do not execute heavy client-side JS bundles. If your content renders inside an empty `<div id="root"></div>`, AI crawlers index an empty shell. Compare SSR vs CSR performance with our [Core Web Vitals & SSR Comparison Tool](https://www.ai-seo-company.pl/en/tools/core-web-vitals-competitor-comparison).
+3. **Entity Consistency (`JSON-LD` + `/llms.txt`):** Pair clean crawler access with `Organization` / `Person` `sameAs` links (validate yours in our [Entity Graph JSON-LD Validator](https://www.ai-seo-company.pl/en/tools/entity-graph-json-ld-validator)) and a concise `/llms.txt` index at the root of your domain.
+4. **2026 Empirical Benchmark (CC BY 4.0):** See real AI crawler blocking rates and the top 49 technical SEO issues across 149+ commercial domains in our [2026 Technical SEO & AI Bot Benchmark Report](https://www.ai-seo-company.pl/en/seo-errors-benchmark-report) ([Polish version](https://www.ai-seo-company.pl/raport-bledow-seo-w-polsce)).
 
 ## License
 

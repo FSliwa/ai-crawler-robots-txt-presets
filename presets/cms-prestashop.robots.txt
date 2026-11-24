@@ -1,0 +1,59 @@
+# Recommended AI & SEO robots.txt policy (2026)
+# Maintained by AI SEO COMPANY (https://www.ai-seo-company.pl/)
+# Allows AI search & citation bots (traffic + leads), blocks raw LLM training scrapers
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Block foundation model training scrapers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+# PrestaShop specific rules (blocks cart, order controllers and faceted sort parameters)
+User-agent: *
+Disallow: /*controller=cart
+Disallow: /*controller=order
+Disallow: /*controller=authentication
+Disallow: /*controller=my-account
+Disallow: /*controller=search
+Disallow: /*orderby=
+Disallow: /*orderway=
+Disallow: /*n=
+Disallow: /modules/
+Allow: /modules/*.css
+Allow: /modules/*.js
+Allow: /
+Sitemap: https://www.example.com/sitemap.xml
